@@ -1,0 +1,113 @@
+<html>
+<head>
+
+</head>
+<body>
+import random
+import itertools
+from itertools import product
+import numpy as np
+
+# cau1
+
+
+def simualtor_dice1(n, count):
+    for i in range(n):
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+        if die1 % 2 == 0 and die2 % 2 == 0:
+            count += 1
+    return count/n
+
+
+# cau2
+def simualtor_dice2(n, count):
+    for i in range(n):
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+        if die1 % 2 != 0 and die2 % 2 == 0:
+            count += 1
+    return count/n
+
+
+# cau3
+def simualtor_dice3(n, count):
+    for i in range(n):
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+        if die1 == die2:
+            count += 1
+    return count/n
+
+
+# cau4
+def simualtor_dice4(n, count):
+    for i in range(n):
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+        if die1 == 1 and die2 == 6:
+            count += 1
+    return count/n
+
+
+# 5
+def simualtor_dice5(n, count):
+    for i in range(n):
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+        if die1 + die2 > 6:
+            count += 1
+    return count/n
+
+# 6
+
+
+def simualtor_poker1(n, count):
+    Ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'}
+    Suits = {'♥', '♦', '♣', '♠'}
+    Cards = list(product(Ranks, Suits))
+    for i in range(n):
+        index = random.randint(0, 51)
+        if Cards[index][1] == '♥':
+            count += 1
+        if Cards[index][1] == '♥':
+            count += 1
+        if Cards[index][1] == '♥':
+            count += 1
+        if Cards[index][1] == '♥':
+            count += 1
+        if Cards[index][1] == '♥':
+            count += 1
+    return count/n
+def simualtor_poker2(n):
+    Ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'}
+    Suits = {'♥', '♦', '♣', '♠'}
+    Cards = list(product(Ranks, Suits))
+    for i in range(n):
+        pass
+    pass 
+
+
+
+def main():
+    n = 100
+    count = 0
+    print("Ex1:", simualtor_dice1(n, count))
+    print("Ex2:", simualtor_dice2(n, count))
+    print("Ex3:", simualtor_dice3(n, count))
+    print("Ex4:", simualtor_dice4(n, count))
+    print("Ex5:", simualtor_dice5(n, count))
+    print("Ex6:", simualtor_poker1(n, count))
+
+
+if __name__ == '__main__':
+    main()
+
+
+
+
+</body>
+
+
+
+</html>
